@@ -1,11 +1,5 @@
-//
-//  ViewController.swift
-//  AppSites
-//
-//  Created by alumnos on 21/1/19.
-//  Copyright © 2019 alumnos. All rights reserved.
-//
 
+import Alamofire
 import UIKit
 
 class ViewController: UIViewController {
