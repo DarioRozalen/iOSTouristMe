@@ -71,10 +71,6 @@ class TableSite: UITableViewController {
         
         Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
             
-            //print(response.response!)
-            //print(response.result)
-            //print(response.response?.statusCode ?? 400)
-            
             switch(response.result){
                 
             case .failure:
@@ -96,7 +92,7 @@ class TableSite: UITableViewController {
                         let site = Site(title: place["name"] as! String, since: place["start_date"] as! String, to: place["end_date"] as! String, description: place["description"] as! String, x_coordinate: place["coordinate_x"] as! Double, y_coordinate: place["coordinate_y"] as! Double)
                         savedSite.append(site)
                     }
-                    
+                    self.tableView.reloadData()
                 }
                 else
                 {

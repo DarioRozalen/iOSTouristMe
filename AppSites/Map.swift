@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
+
 class Map: UIViewController, MKMapViewDelegate{
     
     
@@ -24,7 +25,6 @@ class Map: UIViewController, MKMapViewDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -58,10 +58,6 @@ class Map: UIViewController, MKMapViewDelegate{
                 destination.toDetail = i.to
                 
                 self.present(goDetail!, animated: true)
-                
-                
-                
-                
             }
         }
     }

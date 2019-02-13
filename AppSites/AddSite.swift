@@ -8,19 +8,11 @@ import SwiftyJSON
 class AddSite: UIViewController {
     
     @IBOutlet weak var titleSite: UITextField!
-    
     @IBOutlet weak var commentSite: UITextField!
-    
     @IBOutlet weak var sincePicker: UIDatePicker!
-    
     @IBOutlet weak var toPicker: UIDatePicker!
-    
     @IBOutlet weak var mapView: MKMapView!
-    
     @IBOutlet weak var addButton: UIButton!
-    
-    
-    
     
     var sinceDate: String?
     var toDate: String?
@@ -31,12 +23,9 @@ class AddSite: UIViewController {
     }
     
     override func didReceiveMemoryWarning() {
-        
     }
     
     @IBAction func newSite(_ sender: UIButton) {
-        
-        
         convertPicker()
         petitionAlamo()
     }
@@ -46,15 +35,12 @@ class AddSite: UIViewController {
         coordinate = mapView.convert(pinLocation, toCoordinateFrom: mapView)
         let anotation = MKPointAnnotation()
         
-        
         anotation.coordinate = coordinate
         anotation.title = titleSite.text!
         anotation.subtitle = commentSite.text!
         
         self.mapView.removeAnnotations(mapView.annotations)
         self.mapView.addAnnotation(anotation)
-        
-        
     }
     
     func petitionAlamo(){
@@ -77,15 +63,11 @@ class AddSite: UIViewController {
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             
-            //print(response.response!)
-            //print(response.result)
-            //print(response.response?.statusCode ?? 400)
-            
             switch(response.result){
                 
             case .failure:
                 
-                self.alert(title: "ERROR", message: "Error al crear sitio")
+                self.alert(title: "Error", message: "Create Site Fail")
                 
             case .success:
                 
@@ -97,11 +79,11 @@ class AddSite: UIViewController {
                     savedSite.append(siteNew)
                     
                     self.tabBarController?.selectedIndex = 0
-                    self.alert(title: "SITIO CREADO", message: "Eres una máquina")
+                    self.alert(title: "Site Created", message: "Success")
                 }
                 else
                 {
-                    self.alert(title: "ERROR", message: "Error al crear lugar")
+                    self.alert(title: "Error", message: "Create Place fail")
                 }
             }
         }
@@ -110,12 +92,10 @@ class AddSite: UIViewController {
     func alert(title:String, message:String){
         
         let window = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertButton = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        let alertButton = UIAlertAction(title: "Accept", style: .default, handler: nil)
         window.addAction(alertButton)
         self.present(window, animated: true, completion: nil)
-        
     }
-    
     func convertPicker(){
         
         let dateFormatter = DateFormatter()

@@ -104,13 +104,13 @@
 				7F5432F321F5DFF10096C77B /* Info.plist */,
 				7F5432F921F63D670096C77B /* RegisterController.swift */,
 				7F5432FB21F647E90096C77B /* LoginController.swift */,
+				7FC1B96D2212FC6B003D4462 /* Map.swift */,
 				7FFE056921F77BA70016325B /* TableSite.swift */,
 				7FFE056B21F7807F0016325B /* CellSite.swift */,
 				7FFE056D21F787950016325B /* DetailSIte.swift */,
 				7FFE056521F7707A0016325B /* Site.swift */,
-				7FFE056721F77B090016325B /* SavedSites.swift */,
 				7F95A48D21FF5FC3006A9832 /* AddSite.swift */,
-				7FC1B96D2212FC6B003D4462 /* Map.swift */,
+				7FFE056721F77B090016325B /* SavedSites.swift */,
 			);
 			path = AppSites;
 			sourceTree = "<group>";

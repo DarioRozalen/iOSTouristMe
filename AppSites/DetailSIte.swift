@@ -15,7 +15,7 @@ class DetailSite: UIViewController {
     @IBOutlet weak var titleLabelDetail: UILabel!
     @IBOutlet weak var sinceLabelDetail: UILabel!
     @IBOutlet weak var toLabelDetail: UILabel!
-    @IBOutlet weak var descriptionLabelDetail: UITextView!    
+    @IBOutlet weak var descriptionLabelDetail: UITextView!
     @IBOutlet weak var mapDetail: MKMapView!
     
     override func viewDidLoad() {
@@ -28,8 +28,9 @@ class DetailSite: UIViewController {
         sinceLabelDetail.text = sinceDetail
         toLabelDetail.text = toDetail
         
+        print(x_coordinate)
         pin.coordinate.latitude = x_coordinate
-        pin.coordinate.latitude = y_coordinate
+        pin.coordinate.longitude = y_coordinate
         
         self.mapDetail.addAnnotation(pin)
     }
